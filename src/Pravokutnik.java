@@ -1,16 +1,11 @@
-public class Pravokutnik {
-    String naziv;
+public class Pravokutnik extends GeometrijskiLik{
     double sirina;
     double visina;
 
     public Pravokutnik(String naziv, double sirina, double visina) {
-        this.naziv = naziv;
+        super(naziv);
         this.sirina = sirina;
         this.visina = visina;
-    }
-
-    public String getNaziv() {
-        return this.naziv;
     }
 
     public double getSirina() {
@@ -21,10 +16,6 @@ public class Pravokutnik {
         return this.visina;
     }
 
-    public void setNaziv(String naziv) {
-        this.naziv = naziv;
-    }
-
     public void setSirina(double sirina) {
         this.sirina = sirina;
     }
@@ -33,11 +24,13 @@ public class Pravokutnik {
         this.visina = visina;
     }
 
+    @Override
     public void calcOpseg() {
         double opseg = 2 * (this.visina + this.sirina);
         System.out.println("Opseg pravokutnika je: " +opseg);
     }
 
+    @Override
     public void calcPovrsina() {
         double povrsina = this.sirina * this.visina;
         System.out.println("Povrsina pravokutnika je: "+povrsina);

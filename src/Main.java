@@ -12,7 +12,8 @@ public class Main {
 
         Krug prviKrug = new Krug(naziv, radius);
         prviKrug.calcOpseg();
-        prviKrug.calcArea();
+        prviKrug.calcPovrsina();
+        System.out.println(prviKrug.toString());
 
         System.out.println("Unesite naziv pravokutnika.");
         naziv = input.nextLine();
@@ -24,8 +25,9 @@ public class Main {
         Pravokutnik prviPravokutnik = new Pravokutnik(naziv, sirina, visina);
         prviPravokutnik.calcOpseg();
         prviPravokutnik.calcPovrsina();
+        System.out.println(prviPravokutnik.toString());
 
-        System.out.println("Unesite naziv pravokutnika.");
+        System.out.println("Unesite naziv trokuta.");
         naziv = input.nextLine();
         System.out.println("Unesite stranicu a trokuta.");
         double a = Double.parseDouble(input.nextLine());
@@ -36,7 +38,8 @@ public class Main {
 
         Trokut prviTrokut = new Trokut(naziv, a, b, c);
         prviTrokut.calcOpseg();
-        prviTrokut.clacPovrsina();
+        prviTrokut.calcPovrsina();
+        System.out.println(prviTrokut.toString());
 
         input.close();
     }
