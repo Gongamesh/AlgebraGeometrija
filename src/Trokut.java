@@ -35,15 +35,15 @@ public class Trokut extends GeometrijskiLik{
     }
 
     @Override
-    public void calcOpseg() {
+    public double calcOpseg() {
         double opseg = this.a + this.b + this.c;
-        System.out.println("Opseg trokuta je: "+opseg);
+        return opseg;
     }
 
     @Override
-    public void calcPovrsina() {
+    public double calcPovrsina() {
         double s = (this.a + this.b + this.c) / 2;
         double area = Math.sqrt(s*(s-this.a)*(s-this.b)*(s-this.c));
-        System.out.println("Povrsina trokuta je: " +area);
+        return area;
     }
 }

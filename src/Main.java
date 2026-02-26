@@ -1,8 +1,11 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+        ArrayList<GeometrijskiLik> geoLikovi = new ArrayList<>();
         Scanner input = new Scanner(System.in);
 
         System.out.println("Unesite naziv kruga.");
@@ -11,9 +14,9 @@ public class Main {
         double radius = Double.parseDouble(input.nextLine());
 
         Krug prviKrug = new Krug(naziv, radius);
-        prviKrug.calcOpseg();
-        prviKrug.calcPovrsina();
-        System.out.println(prviKrug.toString());
+        Krug drugiKrug = new Krug("krugic2", 5);
+        geoLikovi.add(prviKrug);
+        geoLikovi.add(drugiKrug);
 
         System.out.println("Unesite naziv pravokutnika.");
         naziv = input.nextLine();
@@ -23,9 +26,9 @@ public class Main {
         double visina = Double.parseDouble(input.nextLine());
 
         Pravokutnik prviPravokutnik = new Pravokutnik(naziv, sirina, visina);
-        prviPravokutnik.calcOpseg();
-        prviPravokutnik.calcPovrsina();
-        System.out.println(prviPravokutnik.toString());
+        Pravokutnik drugiPravokutnik = new Pravokutnik("pravokutnic2", 6, 8);
+        geoLikovi.add(prviPravokutnik);
+        geoLikovi.add(drugiPravokutnik);
 
         System.out.println("Unesite naziv trokuta.");
         naziv = input.nextLine();
@@ -37,9 +40,15 @@ public class Main {
         double c = Double.parseDouble(input.nextLine());
 
         Trokut prviTrokut = new Trokut(naziv, a, b, c);
-        prviTrokut.calcOpseg();
-        prviTrokut.calcPovrsina();
-        System.out.println(prviTrokut.toString());
+        Trokut drugiTrokut = new Trokut("trokutic2", 3, 4, 6);
+        geoLikovi.add(prviTrokut);
+        geoLikovi.add(drugiTrokut);
+
+        Collections.sort(geoLikovi);
+
+        for(GeometrijskiLik g: geoLikovi) {
+            System.out.println(g);
+        }
 
         input.close();
     }

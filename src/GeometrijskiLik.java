@@ -1,4 +1,4 @@
-public abstract class GeometrijskiLik {
+public abstract class GeometrijskiLik implements Comparable<GeometrijskiLik>{
     private String naziv;
 
     public GeometrijskiLik(String naziv) {
@@ -13,12 +13,17 @@ public abstract class GeometrijskiLik {
         this.naziv = naziv;
     }
 
-    public abstract void calcOpseg();
+    public abstract double calcOpseg();
 
-    public abstract void calcPovrsina();
+    public abstract double calcPovrsina();
 
     @Override
     public String toString() {
-        return "Naziv geometrijskog lika je: " + this.naziv;
+        return String.format("Naziv geometrijskog lika je: %s\nPovrsina je: %f\nOpseg je: %f", getNaziv(), calcPovrsina(), calcOpseg());
+    }
+
+    @Override
+    public int compareTo(GeometrijskiLik o) {
+        return Double.compare(calcPovrsina(), o.calcPovrsina());
     }
 }

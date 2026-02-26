@@ -15,14 +15,14 @@ public class Krug extends GeometrijskiLik{
     }
 
     @Override
-    public void calcPovrsina() {
+    public double calcPovrsina() {
         double area = Math.pow(this.radius, 2) * Math.PI;
-        System.out.println("Povrsina kruga je : "+area);
+        return area;
     }
 
     @Override
-    public void calcOpseg() {
+    public double calcOpseg() {
         double opseg = 2 * this.radius * Math.PI;
-        System.out.println("Opseg kruga je: " +opseg);
+        return opseg;
     }
 }

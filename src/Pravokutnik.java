@@ -25,14 +25,14 @@ public class Pravokutnik extends GeometrijskiLik{
     }
 
     @Override
-    public void calcOpseg() {
+    public double calcOpseg() {
         double opseg = 2 * (this.visina + this.sirina);
-        System.out.println("Opseg pravokutnika je: " +opseg);
+        return opseg;
     }
 
     @Override
-    public void calcPovrsina() {
+    public double calcPovrsina() {
         double povrsina = this.sirina * this.visina;
-        System.out.println("Povrsina pravokutnika je: "+povrsina);
+        return povrsina;
     }
 }
